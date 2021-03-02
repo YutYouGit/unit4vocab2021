@@ -8,7 +8,6 @@
     <title>Unit4Vocab2020-jeopardy</title>
 
     <link href="index.css" rel="stylesheet" type="text/css">
-    <link href="popup.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -17,57 +16,53 @@
     <div id="table">
         <center>
             <h1>Jeopardy!</h1>
-
-            <br />
-            <br />
-            <br />
-            <h3> *R.I.P alex trebek* </h3>
-            <h3>Today we will be playing <b> Jeopardy </b> </h3>
+            <br>
+            <br>
+            <br>
+            <h3><b><div class="bounce"> Jeopardy </div></b> </h3>
             <table>
                 <tr>
-
                     <th><span>Giver Vocab</span></th>
                     <th><span>Gimkit Vocab </span></th>
                     <th><span>Computer Vocab</span></th>
                     <th><span>Teacher Vocab</span></th>
                 </tr>
                 <tr>
-                    <td><span>200</span></td>
-                    <td><span>200</span></td>
-                    <td><span>200</span></td>
-                    <td><span>200</span></td>
+                    <td><span class="button" data-modal="panel" category="1" number="1">200</span></td>
+                    <td><span class="button" data-modal="panel" category="2" number="1">200</span></td>
+                    <td><span class="button" data-modal="panel" category="3" number="1">200</span></td>
+                    <td><span class="button" data-modal="panel" category="4" number="1">200</span></td>
                 </tr>
                 <tr>
-                    <td><span>400</span></td>
-                    <td><span>400</span></td>
-                    <td><span>400</span></td>
-                    <td><span>400</span></td>
+                    <td><span class="button" data-modal="panel" category="1" number="2">400</span></td>
+                    <td><span class="button" data-modal="panel" category="2" number="2">400</span></td>
+                    <td><span class="button" data-modal="panel" category="3" number="2">400</span></td>
+                    <td><span class="button" data-modal="panel" category="4" number="2">400</span></td>
                 </tr>
                 <tr>
-                    <td><span>600</span></td>
-                    <td><span>600</span></td>
-                    <td><span>600</span></td>
-                    <td><span>600</span></td>
+                    <td><span class="button" data-modal="panel" category="1" number="3">600</span></td>
+                    <td><span class="button" data-modal="panel" category="2" number="3">600</span></td>
+                    <td><span class="button" data-modal="panel" category="3" number="3">600</span></td>
+                    <td><span class="button" data-modal="panel" category="4" number="3">600</span></td>
                 </tr>
-    
                 <tr>
-                    <td><span>800</span></td>
-                    <td><span>800</span></td>
-                    <td><span>800</span></td>
-                    <td><span>800</span></td>
+                    <td><span class="button" data-modal="panel" category="1" number="4">800</span></td>
+                    <td><span class="button" data-modal="panel" category="2" number="4">800</span></td>
+                    <td><span class="button" data-modal="panel" category="3" number="4">800</span></td>
+                    <td><span class="button" data-modal="panel" category="4" number="4">800</span></td>
                 </tr>
-    
                 <tr>
-                    <td><span>1000</span></td>
-                    <td><span>1000</span></td>
-                    <td><span>1000</span></td>
-                    <td><span>1000</span></td>
+                    <td><span class="button" data-modal="panel" category="1" number="5">1000</span></td>
+                    <td><span class="button" data-modal="panel" category="2" number="5">1000</span></td>
+                    <td><span class="button" data-modal="panel" category="3" number="5">1000</span></td>
+                    <td><span class="button" data-modal="panel" category="4" number="5">1000</span></td>
                 </tr>
             </table>
         </center>
     </div>
 
     <div id="scores">
+        <p><span class="bob" style="position:relative;transform: translateY(-15px);">A-Team</span></p>
         <p>Team 1: <span id="team1score">0</span></p>
         <button class="add" onclick="addPoints(1)">+100</button>
         <button class="subtract" onclick="subtractPoints(1)">-100</button>
@@ -77,11 +72,65 @@
         <p>Team 3: <span id="team3score">0</span></p>
         <button class="add" onclick="addPoints(3)">+100</button>
         <button class="subtract" onclick="subtractPoints(3)">-100</button>
-        <p>Team 4: <span id="team4score">0</span></p>
+        <p>Team Richards: <span id="team4score">0</span></p>
         <button class="add" onclick="addPoints(4)">+100</button>
         <button class="subtract" onclick="subtractPoints(4)">-100</button>
-        <!--<p>Team A: WE ARE THE GOATS :P</p>-->
+        <!--<p>Team A: Infinity WE ARE THE GOATS :P</p>-->
     </div>
+
+    <div id="panel" class="modal">
+      <div class="modal-content">
+        <div class="contact-form">
+            <span class="close">&times;</span>
+            <form action="/">
+                <h2 id="questionTitle"></h2>
+                <p id="questionAnswer"></p>
+                <span id="showAnswer" onclick="document.getElementById('questionAnswer').style='display: block;'"">SHOW ANSWER</span>
+            </form>
+          </div>
+      </div>
+    </div>
+
+    <script>
+        let modalBtns = [...document.querySelectorAll(".button")];
+        modalBtns.forEach(function(btn) {
+            btn.onclick = function() {
+                let modal = btn.getAttribute('data-modal');
+                document.getElementById(modal)
+                .style.display = "block";
+                let category = btn.getAttribute('category');
+                category = Number(category);
+                let number = btn.getAttribute('number');
+                number = Number(number);
+
+                console.log(category, number);
+                document.getElementById("questionAnswer").style = "opacity: 1;";
+
+                document.getElementById("questionTitle").innerHTML = theActualJeapordy[category - 1][number - 1]["question"];
+                document.getElementById("questionAnswer").innerHTML = theActualJeapordy[category - 1][number - 1]["answer"];
+                //document.getElementById("showAnswer").style = "opacity: 0;";
+
+                setTimout(() => {
+                    document.getElementById("showAnswer").style = "opacity: 0;";
+                }, 20);
+            }
+        });
+
+        let closeBtns = [...document.querySelectorAll(".close")];
+        closeBtns.forEach(function(btn) {
+            btn.onclick = function() {
+                let modal = btn.closest('.modal');
+                modal.style.display = "none";
+                document.getElementById("questionAnswer").style = "display: none;";
+            }
+        });
+
+        window.onclick = function(event) {
+            if(event.target.className === "modal") {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
