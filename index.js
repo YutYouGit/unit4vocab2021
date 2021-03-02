@@ -36,16 +36,16 @@ let theActualJeapordy = [
             "answer": "What is residue", // 800
         },
         {
-            "question": "The giver comunity ____ lies: infact, only the reciever of memory can say the,",
+            "question": "The giver comunity ____ lies: in fact, only the reciever of memory can say the,",
             "answer": "What is deplores", // 600
         },
         {
-            "question": "The elders ____ your entire life too decide your job",
-            "answer": "What is peruses", // 800
+            "question": "The elders ____ your entire life in order too decide your job",
+            "answer": "What is peruse", // 800
         },
         {
-            "question": "The giver comunity is quite _______. They  check on you at all times.",
-            "answer": "What is Solicitus", // 1000
+            "question": "The giver comunity is quite _______. They check on their citizens at all times.",
+            "answer": "What is solicitous", // 1000
         },
     ],
     [ // Gimkit section
