@@ -8,6 +8,7 @@
     <title>Unit4Vocab2020-jeopardy</title>
 
     <link href="index.css" rel="stylesheet" type="text/css">
+    <link href="popup.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -15,32 +16,34 @@
     
     <div id="table">
         <center>
-            <h1>Happy Jeopardy!</h1>
-            <h3>Today we will be playing <b> Double Jeopardy </b> </h3>
+            <h1>Jeopardy!</h1>
+
+            <br />
+            <br />
+            <br />
+            <h3> *R.I.P alex trebek* </h3>
+            <h3>Today we will be playing <b> Jeopardy </b> </h3>
             <table>
                 <tr>
-                    <th><span>Spam email Vocab</span></th>
-                    <th><span> Popup Vocab </span></th> 
-                    <th><span> Gimkit Vocab </span></th>
+
+                    <th><span>Giver Vocab</span></th>
+                    <th><span>Gimkit Vocab </span></th>
                     <th><span>Computer Vocab</span></th>
-                    <th><span> Scam survey Vocab </span></th>
+                    <th><span>Teacher Vocab</span></th>
                 </tr>
                 <tr>
                     <td><span>200</span></td>
                     <td><span>200</span></td>
                     <td><span>200</span></td>
                     <td><span>200</span></td>
-                    <td><span>200</span></td>
                 </tr>
                 <tr>
                     <td><span>400</span></td>
                     <td><span>400</span></td>
                     <td><span>400</span></td>
                     <td><span>400</span></td>
-                    <td><span>400</span></td>
                 </tr>
                 <tr>
-                    <td><span>600</span></td>
                     <td><span>600</span></td>
                     <td><span>600</span></td>
                     <td><span>600</span></td>
@@ -52,11 +55,9 @@
                     <td><span>800</span></td>
                     <td><span>800</span></td>
                     <td><span>800</span></td>
-                    <td><span>800</span></td>
                 </tr>
     
                 <tr>
-                    <td><span>1000</span></td>
                     <td><span>1000</span></td>
                     <td><span>1000</span></td>
                     <td><span>1000</span></td>
@@ -67,19 +68,19 @@
     </div>
 
     <div id="scores">
-        <p>Team 1: <span id="team1score"></span></p>
-        <button class="add">+100</button>
-        <button class="subtract">-100</button>
-        <p>Team 2: <span id="team2score"></span></p>
-        <button class="add">+100</button>
-        <button class="subtract">-100</button>
-        <p>Team 3: <span id="team3score"></span></p>
-        <button class="add">+100</button>
-        <button class="subtract">-100</button>
-        <p>Team 4: <span id="team4score"></span></p>
-        <button class="add">+100</button>
-        <button class="subtract">-100</button>
-        <!--<p>Team A: Infinity :P</p>-->
+        <p>Team 1: <span id="team1score">0</span></p>
+        <button class="add" onclick="addPoints(1)">+100</button>
+        <button class="subtract" onclick="subtractPoints(1)">-100</button>
+        <p>Team 2: <span id="team2score">0</span></p>
+        <button class="add" onclick="addPoints(2)">+100</button>
+        <button class="subtract" onclick="subtractPoints(2)">-100</button>
+        <p>Team 3: <span id="team3score">0</span></p>
+        <button class="add" onclick="addPoints(3)">+100</button>
+        <button class="subtract" onclick="subtractPoints(3)">-100</button>
+        <p>Team 4: <span id="team4score">0</span></p>
+        <button class="add" onclick="addPoints(4)">+100</button>
+        <button class="subtract" onclick="subtractPoints(4)">-100</button>
+        <!--<p>Team A: WE ARE THE GOATS :P</p>-->
     </div>
 </body>
 

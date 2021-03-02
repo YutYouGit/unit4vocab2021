@@ -8,10 +8,28 @@ body {
     font-size: 200%;
     color: rgb(255, 255, 255);
     text-shadow: 4px 4px rgb(0, 119, 255);
+    overflow-x: hidden;
 }
 
 table {
     width: 50%;
+}
+
+@keyframes example {
+    0% {left: 25%;}
+    25% {left: 55%;}
+    50% {left: 300%;}
+    50.001% {left: -300%;}
+    75% {left: -25%}   
+    100% {left: 25%}    
+}
+
+h1 {
+    left: 55%;
+    animation: example;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    position: absolute;
 }
 
 th, td, tr {
@@ -20,18 +38,18 @@ th, td, tr {
     color: rgb(255, 255, 255);
     border: 4px solid rgb(255, 255, 50);
     border-collapse: collapse;
-    height: 100px;
+    height: 60px;
     text-shadow: 2px 2px rgb(0, 119, 255);
 }
 
 th, td {
-    opacity: 0.4;
+    opacity: 0.7;
     transition: opacity 0.2s, border 0.8s;
 }
 
 th:hover, td:hover {
-    opacity: 1.0;
-    transition: opacity 0.1s, border 0.4s;
+    opacity: 1.5;
+    transition: opacity 0.1s, border 0.8s;
     overflow: auto;
     border: 4px solid rgb(255, 255, 150);
 }
@@ -47,7 +65,7 @@ button {
     font-style: bold;
     color: #440;
     text-shadow: 1.25px 1.25px rgb(151, 155, 0);
-    opacity: 0.6;
+    opacity: 0.8;
     transition: opacity 0.1s;
 }
 
@@ -73,6 +91,7 @@ button:hover {
 #scores {
     position: absolute;
     left: 5%;
-    top: 10%;
-    width:20%;
+    top: 20%;
+    width: 20%;
+    text-shadow: 2px 2px rgb(0, 119, 255);
 }
