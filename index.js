@@ -139,7 +139,7 @@ let theActualJeapordy = [
         },
         {
             "question": "Doing work is _____",
-            "answer": "What is Frivolus?", // 1000
+            "answer": "What is Frivolus?", // 1000 
         },
     ],
 ]
@@ -165,4 +165,4 @@ residue
 solicitious
 staid
 sustain
-*/ 
+*/  
