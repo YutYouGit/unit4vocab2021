@@ -19,13 +19,13 @@
             <br>
             <br>
             <br>
-            <h3><b><div class="bounce"> Jeopardy </div></b> </h3>
+            <h3><b><span class="bounce button2" data-modal="panel" category="5" number="1">Click For Rules</span></b></h3>
             <table>
-                <tr>
-                    <th><span>Giver Vocab</span></th>
-                    <th><span>Gimkit Vocab </span></th>
-                    <th><span>Computer Vocab</span></th>
-                    <th><span>Teacher Vocab</span></th>
+                <tr class="category">
+                    <th class="category"><span>Giver Vocab</span></th>
+                    <th class="category"><span>Gimkit Vocab </span></th>
+                    <th class="category"><span>Computer Vocab</span></th>
+                    <th class="category"><span>Teacher Vocab</span></th>
                 </tr>
                 <tr>
                     <td><span class="button" data-modal="panel" category="1" number="1">200</span></td>
@@ -72,7 +72,7 @@
         <p>Team 3: <span id="team3score">0</span></p>
         <button class="add" onclick="addPoints(3)">+100</button>
         <button class="subtract" onclick="subtractPoints(3)">-100</button>
-        <p>Team R: <span id="team4score">0</span></p>
+        <p>Team <span id="richards">Richards</span>: <span id="team4score">0</span></p>
         <button class="add" onclick="addPoints(4)">+100</button>
         <button class="subtract" onclick="subtractPoints(4)">-100</button>
         <!--<p>Team A: ∞!!!!!!!!!!!!!∞, ∞ times :P</p>-->
@@ -81,11 +81,12 @@
     <div id="panel" class="modal">
       <div class="modal-content">
         <div class="contact-form">
-            <span class="close">&times;</span>
+            <button class="close">X</button>
             <form action="/">
                 <h2 id="questionTitle"></h2>
                 <p id="questionAnswer"></p>
-                <span id="showAnswer" onclick="document.getElementById('questionAnswer').style='display: block;'"">Give Up???</span>
+                <span id="timer"></span>
+                <span id="showAnswer" onclick="document.getElementById('questionAnswer').style='display: block;'"">TIME'S UP, CLICK FOR ANSWER</span>
             </form>
           </div>
       </div>
@@ -103,33 +104,88 @@
                 let number = btn.getAttribute('number');
                 number = Number(number);
 
-                console.log(category, number);
                 document.getElementById("questionAnswer").style = "opacity: 1;";
 
                 document.getElementById("questionTitle").innerHTML = theActualJeapordy[category - 1][number - 1]["question"];
                 document.getElementById("questionAnswer").innerHTML = theActualJeapordy[category - 1][number - 1]["answer"];
-                //document.getElementById("showAnswer").style = "opacity: 0;";
+                document.getElementById("showAnswer").style = "display: none;";
+                
+                let closeBtns = [...document.querySelectorAll(".close")];
+                closeBtns.forEach(function(btn) {btn.onclick = function() {}});
 
-                setTimout(() => {
-                    document.getElementById("showAnswer").style = "opacity: 0;";
-                }, 20);
+                let seconds = 10;
+
+                setTimeout(() => {
+                    document.getElementById("showAnswer").style = "display: block;";
+                }, seconds * 1000);
+
+                document.getElementById("timer").innerHTML = seconds;
+                seconds -= 1;
+
+                var x = setInterval(function() {
+                    document.getElementById("timer").innerHTML = seconds;
+
+                    // If the count down is finished, write some text
+                    if (seconds <= 0) {
+                        clearInterval(x);
+                        document.getElementById("timer").innerHTML = "";
+                        // let closeBtns = [...document.querySelectorAll(".close")];
+                        closeBtns.forEach(function(btn) {
+                            btn.onclick = function() {
+                                let modal = btn.closest('.modal');
+                                modal.style.display = "none";
+                                document.getElementById("questionAnswer").style = "display: none;";
+                            }
+                        });
+                    }
+
+                    seconds -= 1;
+                }, 1000);
+                
+                btn.parentNode.style = "background-color: #f00; border-color: #f00;";
+                btn.parentNode.removeChild(btn);
             }
         });
 
-        let closeBtns = [...document.querySelectorAll(".close")];
-        closeBtns.forEach(function(btn) {
+        let modalBtns2 = [...document.querySelectorAll(".button2")];
+        modalBtns2.forEach(function(btn) {
             btn.onclick = function() {
-                let modal = btn.closest('.modal');
-                modal.style.display = "none";
-                document.getElementById("questionAnswer").style = "display: none;";
+                let modal = btn.getAttribute('data-modal');
+                document.getElementById(modal)
+                .style.display = "block";
+                let category = btn.getAttribute('category');
+                category = Number(category);
+                let number = btn.getAttribute('number');
+                number = Number(number);
+
+                document.getElementById("questionAnswer").style = "opacity: 1;";
+
+                document.getElementById("questionTitle").innerHTML = theActualJeapordy[category - 1][number - 1]["question"];
+                document.getElementById("questionAnswer").innerHTML = theActualJeapordy[category - 1][number - 1]["answer"];
+                document.getElementById("showAnswer").style = "display: none;";
+
+                let closeBtns = [...document.querySelectorAll(".close")];
+                closeBtns.forEach(function(btn) {
+                    btn.onclick = function() {
+                        let modal = btn.closest('.modal');
+                        modal.style.display = "none";
+                        document.getElementById("questionAnswer").style = "display: none;";
+                    }
+                });
+
+                document.getElementById('questionAnswer').style='display: block;';
             }
         });
 
-        window.onclick = function(event) {
-            if(event.target.className === "modal") {
-                event.target.style.display = "none";
-            }
-        }
+        // mouseover
+        let bobEasterEgg = [...document.querySelectorAll(".bob")];
+        bobEasterEgg.forEach(function(elem) {
+            elem.addEventListener("mouseover", function() {
+                setTimeout(() => {
+                    window.location.replace("/08riyf9q87ehf8779hbufykYO8AFITT6320W9");
+                }, 1000);
+            }); 
+        });
     </script>
 </body>
 
