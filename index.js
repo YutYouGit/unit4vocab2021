@@ -28,8 +28,8 @@ setInterval(() => {
 let theActualJeapordy = [
     [ // Giver section
         {
-            "question": "A _____ is unweildy for transporting food and goods.",
-            "answer": "What is promonotory", // 200
+            "question": "A _____ is unwieldy for transporting food and goods.",
+            "answer": "What is promontory", // 200
         },
         {
             "question": "There is not any ______ of memories in the community.",
@@ -40,21 +40,21 @@ let theActualJeapordy = [
             "answer": "What is deplores", // 600
         },
         {
-            "question": "The elders ____ your entire life in order too decide your job.",
+            "question": "The elders ____ your entire life in order to decide your job.",
             "answer": "What is peruse", // 800
         },
         {
-            "question": "The giver comunity is quite _______. They check on their citizens at all times.",
+            "question": "Jonas was _______ about his community after he saw what release actually was.",
             "answer": "What is solicitous", // 1000
         },
     ],
     [ // Gimkit section
         {
-            "question": "A-Team is not very _____ in it's defenses, it is rare that someone manages to beat it in gimkit.",
+            "question": "A-Team is not very _____ in it's defenses, it is rare that someone manages to beat it in Gimkit.",
             "answer": "What is porous", // 200
         },
         {
-            "question": "Gimkits _____ us to keep going to school, otherwise we would be extremnely bored.",
+            "question": "Gimkits _____ our mental lives at school,  without them, we would be extremely bored.",
             "answer": "What is sustain", // 400
         },
         {
@@ -66,13 +66,13 @@ let theActualJeapordy = [
             "answer": "What is prone", // 800
         },
         {
-            "question": "A-team is quite ____ even though everyone taunts them.",
+            "question": "A-team is quite ____ despite the fact that everyone taunts them.",
             "answer": "What is staid", // 1000
         },
     ],
     [ // Computer section
         {
-            "question": "You ________ me out when I was a crewmate. Even though green is the imposter though.",
+            "question": "You ________ me out when I was a crewmate. Even though green is the imposter.",
             "answer": "What is ousted", // 200
         },
         {
@@ -80,11 +80,11 @@ let theActualJeapordy = [
             "answer": "What is ornate", // 800
         },
         {
-            "question": "You should _______ up enough money to buy a ryzen 7 processer.",
+            "question": "You should _______ up enough money to buy a ryzen 7 processor.",
             "answer": "What is muster", // 600
         },
         {
-            "question": "There is noone _____ to when a pro hacker is hacking your computer.",
+            "question": "There is no one to _____ to when a pro hacker is hacking your computer.",
             "answer": "What is recourse", // 800
         },
         {
@@ -110,31 +110,8 @@ let theActualJeapordy = [
             "answer": "What is obsess", // 800
         },
         {
-            "question": "Doing work is _____.",
+            "question": "Many people think that getting a lot of homework is _____.",
             "answer": "What is frivolous", // 1000 
         },
     ],
 ]
-
-/*I DID THE RULES   
-anulled
-blase
-bolstered
-deplored
-frivolous
-muster
-nonentity
-obsessed
-ornate
-ousted
-peruse
-porous
-promontory 
-prone
-qualms
-recourse
-residue
-solicitious
-staid
-sustain
-*/
