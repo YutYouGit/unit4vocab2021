@@ -59,7 +59,7 @@ let theActualJeapordy = [
         },
         {
             "question": "We are never _____ when we win a Gimkit, instead we always celebrate.",
-            "answer": "What is a blasé?", // 400
+            "answer": "What is blasé?", // 400
         },
         {
             "question": "A-Team is _____ to winning Gimkit, unlike many other teams. ",
