@@ -1,30 +1,30 @@
 let teamScores = [
     0, 0, 0, 0
 ]   
-
+ 
 let addPoints = (team) => {
     teamScores[team - 1] += 100;
-
+ 
     if (teamScores[team - 1] > 15000) {
         teamScores[team - 1] = 15000;
     }
 }
-
+ 
 let subtractPoints = (team) => {
     teamScores[team - 1] -= 100;
-
+ 
     if (teamScores[team - 1] < -2000) {
         teamScores[team - 1] = -2000;
     }
 }
-
+ 
 setInterval(() => {
     for (let i = 0; i < teamScores.length; i++) {
         let elem = document.getElementById(`team${i + 1}score`);
         elem.innerHTML = teamScores[i];
     }
 }, 20);
-
+ 
 let theActualJeapordy = [
     [ // Giver section
         {
@@ -121,3 +121,7 @@ let theActualJeapordy = [
         },
     ]
 ]
+ 
+ 
+ 
+
